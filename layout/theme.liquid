@@ -245,7 +245,7 @@
         effectiveTime: {{ seal-product-review.id | json }},
     }
     {% if collection.products %}
-    {% paginate collection.products by0%}
+    {% paginate collection.products by 0 %}
     shopifyObj.productList = {{collection.products | json}}
     {% endpaginate %}
     {%endif%}
@@ -303,3 +303,13 @@
     {%- endif -%}
   </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% paginate collection.products by0%}"
+  to: "{% paginate collection.products by 0 %}"
+  position: 14328..14367
+{% endcomment %}
